@@ -38,7 +38,7 @@ const Navbar: React.FC = () => {
               onClick={() => setIsOpen(true)}
             />
             <img
-              className="h-30 w-30"
+              className="h-25 w-25"
               src={Logo}
               alt="Crypto-Logo"
             />
