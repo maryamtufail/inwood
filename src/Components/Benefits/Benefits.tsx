@@ -31,7 +31,7 @@ const benefitData: BenefitData[] = [
 ];
 const Benefit: React.FC = () => {
   return (
-    <div className="container mx-auto pt-16 px-4 md:px-6 lg:px-8 pb-20 text-[#07484A] bg-[#E0EFF6] ">
+    <div className="pt-16 px-4 md:px-6 lg:px-8 pb-20 text-[#07484A] bg-[#E0EFF6] ">
       <div className="text-center mb-12">
         <h3 className="text-3xl md:text-4xl font-bold mb-24">
           Benefits for Your Convenience
