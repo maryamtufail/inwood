@@ -21,7 +21,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
       <img
           src="./images/testimonial/quote.svg"
           alt="quote"
-          className="absolute top-0 left-0 w-12 h-12"
+          className="absolute top-0 left-0 w-24 h-24"
         />
         <p className="text-lg sm:text-2xl text-gray-600 mb-14 leading-relaxed">
           {quote}
