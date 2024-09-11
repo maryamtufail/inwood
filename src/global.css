@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.swiper-scrollbar {
+  background-color: #07484a;
+}
+
+.swiper-scrollbar-drag {
+  margin-top: -5px;
+  border-radius: 0;
+  height: 25px;
+  background-color: #70908b ;
+}
+
