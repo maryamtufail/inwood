@@ -4,6 +4,7 @@ import ExploreSection from './Components/ExploreCategories/ExploreSection';
 import Benefits from './Components/Benefits/Benefits';
 import TestimonialSection from './Components/Testimonials/TestimonialSection';
 import Product from './Components/PopularProducts/Product';
+import News from './Components/News/News';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Product/>
       <Benefits/>
       <TestimonialSection/>
+      <News/>
     </>
   );
 }
