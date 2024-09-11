@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/scrollbar';
-import { Scrollbar,  } from 'swiper/modules';
+import { Scrollbar } from 'swiper/modules';
 import ProductItem from './ProductItem';
 import { useRef } from 'react';
 import { Swiper as SwiperType } from 'swiper/types';
@@ -66,24 +66,24 @@ const products = [
 ];
 
 const ProductSlider: React.FC = () => {
-    const swiperRef = useRef<SwiperType | null>(null); 
+  const swiperRef = useRef<SwiperType | null>(null);
 
-    const nextSlide = () => {
-      if (swiperRef.current) {
-        swiperRef.current.slideNext(); 
-      }
-    };
-  
-    const prevSlide = () => {
-      if (swiperRef.current) {
-        swiperRef.current.slidePrev(); 
-      }
-    };
+  const nextSlide = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slideNext();
+    }
+  };
+
+  const prevSlide = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slidePrev();
+    }
+  };
 
   return (
     <div className="ml-20 lg:ml-[320px] px-2">
       <Swiper
-       onSwiper={(swiper) => (swiperRef.current = swiper)}
+        onSwiper={(swiper) => (swiperRef.current = swiper)}
         spaceBetween={10}
         slidesPerView={1}
         modules={[Scrollbar]}
@@ -102,7 +102,6 @@ const ProductSlider: React.FC = () => {
             slidesPerView: 3.5,
           },
         }}
-       
       >
         {products.map((product, index) => (
           <SwiperSlide key={index} className="bg-white rounded-lg py-12">
@@ -116,8 +115,8 @@ const ProductSlider: React.FC = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-        {/* navigation */}
-        <div className="flex flex-row items-center justify-end p-3 space-x-4">
+      {/* navigation */}
+      <div className="flex flex-row items-center justify-end p-3 space-x-4">
         <button
           className="bg-blue-100 p-3 rounded-full text-blue-500"
           onClick={prevSlide}
@@ -156,7 +155,7 @@ const ProductSlider: React.FC = () => {
             />
           </svg>
         </button>
-        </div>
+      </div>
     </div>
   );
 };
