@@ -5,6 +5,7 @@ import Benefits from './Components/Benefits/Benefits';
 import TestimonialSection from './Components/Testimonials/TestimonialSection';
 import Product from './Components/PopularProducts/Product';
 import News from './Components/News/News';
+import Footer from './Components/Footer/Footer';
 
 function App() {
   return (
@@ -12,10 +13,11 @@ function App() {
       <Navbar />
       <Banner />
       <ExploreSection />
-      <Product/>
-      <Benefits/>
-      <TestimonialSection/>
-      <News/>
+      <Product />
+      <Benefits />
+      <TestimonialSection />
+      <News />
+      <Footer />
     </>
   );
 }
