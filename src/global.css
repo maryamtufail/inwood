@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+background-color: #fdfbf8;
+}
+
 .swiper-scrollbar {
   background-color: #07484a;
 }
