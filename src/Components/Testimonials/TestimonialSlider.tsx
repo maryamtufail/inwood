@@ -1,33 +1,28 @@
 import React, { useState } from 'react';
 import TestimonialCard from './TestimonialCard';
-
-const testimonials = [
-  {
-    quote:
-      '"My experience with Mark is a complete success, from customer service, wide range of products, clean store, purchasing experience, the newsletter. Thank you."',
-    author: 'Leona Paul',
-    position: 'CEO of Floatcom',
-  },
-  {
-    quote:
-      '"Great service and amazing selection of products. The store is always clean, and I love the purchasing experience."',
-    author: 'John Doe',
-    position: 'Manager at Retail Inc',
-  },
-  // Add more testimonials
-];
+import { useFetchTestimonial } from '../../hooks/useFetchTestimonial';
 
 const TestimonialSlider: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  const { data, error, isLoading } = useFetchTestimonial();
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
+
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % testimonials.length);
+    if (data) {
+      setCurrentSlide((prev) => (prev - 1) % data.testimonials.length);
+    }
   };
 
   const prevSlide = () => {
-    setCurrentSlide(
-      (prev) => (prev - 1 + testimonials.length) % testimonials.length
-    );
+    if (data) {
+      setCurrentSlide(
+        (prev) =>
+          (prev + 1 + data.testimonials.length) % data.testimonials.length
+      );
+    }
   };
 
   return (
@@ -37,13 +32,9 @@ const TestimonialSlider: React.FC = () => {
           className="flex transition-transform duration-500"
           style={{ transform: `translateX(-${100 * currentSlide}%)` }}
         >
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className="flex-none w-full">
-              <TestimonialCard
-                quote={testimonial.quote}
-                author={testimonial.author}
-                position={testimonial.position}
-              />
+          {data?.testimonials.map((testimonial) => (
+            <div key={testimonial.id} className="flex-none w-full">
+              <TestimonialCard testimonial={testimonial} />
             </div>
           ))}
         </div>

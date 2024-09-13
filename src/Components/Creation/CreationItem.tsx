@@ -15,7 +15,7 @@ export const CreationItem: React.FC<ProductItemProps> = ({ product }) => {
       />
       <div className="flex justify-around">
        
-        <h2 className="text-2xl font-semibold">{product.title}</h2>{' '}
+        <h2 className="text-2xl font-semibold">{product.title}</h2>
         <p className="text-2xl font-semibold mb-16">${product.price}</p>
       </div>
     </div>

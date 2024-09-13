@@ -27,8 +27,8 @@ const News: React.FC = () => {
 
   return (
     <div className="flex flex-col md:flex-row h-[600px]">
-            <div className="min-h-64 min-w-[50%] bg-gray-300"></div>
-      <div className="w-full md:w-1/2 bg-green-50 p-8 md:p-16 flex flex-col justify-center ">
+            <div className="min-h-64 min-w-[50%] "  style={{ backgroundImage: `url('https://miro.medium.com/v2/resize:fit:1126/1*ELBnrKVFj1M-CaD3G-jVtA.jpeg')` }}></div>
+      <div className="w-full md:w-1/2 bg-[#e0f6f1] p-8 md:p-16 flex flex-col justify-center  ">
         <h2 className="text-4xl md:text-5xl  text-[#07484A] mb-8">
           Join Our <p className="font-bold mt-2">Newsletter</p>
         </h2>
