@@ -2,14 +2,14 @@ const Banner: React.FC = () => {
   return (
     <div
       className="relative bg-cover bg-center bg-no-repeat bg-[#c4c4c4] rounded-b-[4rem]"
-      id="home-section"
+      id="home"
     >
       <div className="absolute top-0 left-0 w-full h-full">
         <div className="hidden lg:block absolute inset-0 radial-banner"></div>
         <div className="absolute top-4 left-4 arrowOne"></div>
       </div>
 
-      <div className="mx-auto max-w-7xl pt-16 pb-6 lg:pt-40 sm:pb-24 px-8 relative">
+      <div className="mx-auto max-w-7xl pt-16 pb-6 lg:pt-20 sm:pb-24 px-8 relative">
         <div className="h-full">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 my-16">
             <div className="relative lg:col-span-7 flex flex-col justify-center">

@@ -2,7 +2,7 @@ import ProductSlider from './ProductSlider';
 
 const Product: React.FC = () => {
   return (
-    <section className="pt-24 pb-24 px-0">
+    <section id="product" className="pt-24 pb-24 px-0 ">
       {/* Header Section */}
       <div className="flex w-full justify-center items-center">
         <span className="text-4xl font-bold text-[#07484a]">

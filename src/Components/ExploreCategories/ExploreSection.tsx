@@ -13,7 +13,7 @@ const ExploreSection: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center px-4 py-8 lg:px-8 lg:py-24 w-full">
+    <div id="cateories" className="flex flex-col items-center px-4 py-8 lg:px-8 lg:py-24 w-full">
       <h2 className="lg:pb-12 text-3xl lg:text-4xl font-bold mb-8  text-center ">
         Explore by Category
       </h2>

@@ -8,10 +8,10 @@ import Drawerdata from './Drawerdata';
 
 const initialNavigation: NavigationItem[] = [
   { name: 'Home', href: '#', current: true },
-  { name: 'Products', href: '#exchange-section', current: false },
-  { name: 'Categories', href: '#cateories-section', current: false },
-  { name: 'About', href: '#about-section', current: false },
-  { name: 'Contact Us', href: '#contact-section', current: false },
+  { name: 'Products', href: '#product', current: false },
+  { name: 'Categories', href: '#cateories', current: false },
+  { name: 'About', href: '#about', current: false },
+  { name: 'Contact Us', href: '#contact', current: false },
 ];
 
 function classNames(...classes: string[]) {
@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <Disclosure as="nav" className="navbar bg-[#c4c4c4]">
+    <Disclosure as="nav" className="fixed top-0 left-0 right-0 bg-[#c4c4c4] z-50">
       <div className="mx-auto max-w-7xl p-3 md:p-4 lg:px-8">
         <div className="relative flex items-center h-8 sm:h-12">
           {/* Mobile Menu Icon */}
