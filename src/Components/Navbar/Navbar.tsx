@@ -4,7 +4,7 @@ import { MenuIcon, SearchIcon } from '@heroicons/react/outline';
 import { ShoppingCartIcon, UserCircleIcon } from '@heroicons/react/solid';
 import Drawer from './Drawer';
 import Drawerdata from './Drawerdata';
-import Logo from '@/assets/logo.png';
+
 
 interface NavigationItem {
   name: string;
@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
             />
             <img
               className="h-25 w-25"
-              src={Logo}
+              src="/images/logo.png" 
               alt="Crypto-Logo"
             />
             <div className="flex items-center sm:space-x-6 space-x-3 lg:mr-4">
@@ -53,12 +53,12 @@ const Navbar: React.FC = () => {
           <div className="flex flex-1 items-center justify-start lg:justify-start lg:absolute lg:left-0">
             <img
               className="block h-10 w-20px lg:hidden"
-              src={Logo}
+              src="/images/logo.png" 
               alt="Crypto-Logo"
             />
             <img
               className="hidden h-48px w-48px lg:block"
-              src={Logo}
+              src="/images/logo.png" 
               alt="Crypto-Logo"
             />
           </div>

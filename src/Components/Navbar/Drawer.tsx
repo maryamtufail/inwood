@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { XIcon } from '@heroicons/react/outline';
-import Logo from '@/assets/logo.png';
+
 
 interface DrawerProps {
     children: ReactNode;
@@ -20,7 +20,7 @@ const Drawer: React.FC<DrawerProps> = ({ children, isOpen, setIsOpen }) => {
                     <div className="flex items-center">
                         <img
                             className="h-10 lg:hidden"
-                            src={Logo}
+                            src="/images/logo.png"
                             alt="Crypto Logo"
                         />
                     </div>
