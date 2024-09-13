@@ -1,15 +1,10 @@
-import { Disclosure } from '@headlessui/react';
 import React, { useState } from 'react';
+import { Disclosure } from '@headlessui/react';
 import { MenuIcon, SearchIcon } from '@heroicons/react/outline';
 import { ShoppingCartIcon, UserCircleIcon } from '@heroicons/react/solid';
+import { NavigationItem } from '../../types/navigation';
 import Drawer from './Drawer';
 import Drawerdata from './Drawerdata';
-
-interface NavigationItem {
-  name: string;
-  href: string;
-  current: boolean;
-}
 
 const initialNavigation: NavigationItem[] = [
   { name: 'Home', href: '#', current: true },
@@ -24,13 +19,11 @@ function classNames(...classes: string[]) {
 }
 
 const Navbar: React.FC = () => {
-  // State to manage the active link
   const [navigation, setNavigation] = useState(initialNavigation);
   const [isOpen, setIsOpen] = useState(false);
 
-  // Function to handle setting the current active link
   const handleSetActive = (name: string) => {
-    const updatedNavigation = navigation.map(item =>
+    const updatedNavigation = navigation.map((item) =>
       item.name === name
         ? { ...item, current: true }
         : { ...item, current: false }
@@ -49,33 +42,54 @@ const Navbar: React.FC = () => {
               aria-hidden="true"
               onClick={() => setIsOpen(true)}
             />
-            <img className="h-25 w-25" src="/images/logo.png" alt="Crypto-Logo" />
+            <img
+              className="h-25 w-25"
+              src="/images/logo.png"
+              alt="Crypto-Logo"
+            />
             <div className="flex items-center sm:space-x-6 space-x-3 lg:mr-4">
-              <SearchIcon className="h-5 w-5 text-[#07484a]" aria-hidden="true" />
-              <ShoppingCartIcon className="h-5 w-5 text-[#07484a]" aria-hidden="true" />
-              <UserCircleIcon className="h-5 w-5 text-[#07484a]" aria-hidden="true" />
+              <SearchIcon
+                className="h-5 w-5 text-[#07484a]"
+                aria-hidden="true"
+              />
+              <ShoppingCartIcon
+                className="h-5 w-5 text-[#07484a]"
+                aria-hidden="true"
+              />
+              <UserCircleIcon
+                className="h-5 w-5 text-[#07484a]"
+                aria-hidden="true"
+              />
             </div>
           </div>
 
           {/* Desktop Logo */}
           <div className="flex flex-1 items-center justify-start lg:justify-start lg:absolute lg:left-0">
-            <img className="block h-10 w-20px lg:hidden" src="/images/logo.png" alt="Crypto-Logo" />
-            <img className="hidden h-48px w-48px lg:block" src="/images/logo.png" alt="Crypto-Logo" />
+            <img
+              className="block h-10 w-20px lg:hidden"
+              src="/images/logo.png"
+              alt="Crypto-Logo"
+            />
+            <img
+              className="hidden h-48px w-48px lg:block"
+              src="/images/logo.png"
+              alt="Crypto-Logo"
+            />
           </div>
 
           {/* Desktop Menu Links */}
           <div className="hidden lg:flex flex-1 items-center justify-center">
             <div className="flex space-x-4">
-              {navigation.map(item => (
+              {navigation.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  onClick={() => handleSetActive(item.name)} 
+                  onClick={() => handleSetActive(item.name)}
                   className={classNames(
                     item.current
-                    ? 'text-[#07484a] font-semibold underline underline-offset-2' // Adds a little space
-                    : 'text-[#07484a] hover:text-offwhite hover-underline',
-                  'px-3 py-4 rounded-md text-md font-normal'
+                      ? 'text-[#07484a] font-semibold underline underline-offset-2'
+                      : 'text-[#07484a] hover:text-offwhite hover-underline',
+                    'px-3 py-4 rounded-md text-md font-normal'
                   )}
                   aria-current={item.current ? 'page' : undefined}
                 >
@@ -88,8 +102,14 @@ const Navbar: React.FC = () => {
           {/* Desktop Icons */}
           <div className="hidden lg:flex items-center space-x-3 text-xl font-semibold lg:justify-end">
             <SearchIcon className="h-5 w-5 text-[#07484a]" aria-hidden="true" />
-            <ShoppingCartIcon className="h-5 w-5 text-[#07484a]" aria-hidden="true" />
-            <UserCircleIcon className="h-5 w-5 text-[#07484a]" aria-hidden="true" />
+            <ShoppingCartIcon
+              className="h-5 w-5 text-[#07484a]"
+              aria-hidden="true"
+            />
+            <UserCircleIcon
+              className="h-5 w-5 text-[#07484a]"
+              aria-hidden="true"
+            />
           </div>
         </div>
 

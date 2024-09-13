@@ -1,14 +1,11 @@
-interface NavigationItem {
-    name: string;
-    href: string;
-    current: boolean;
-}
+import { NavigationItem } from '../../types/navigation';
 
 const navigation: NavigationItem[] = [
-    { name: 'Home', href: '#home-section', current: false },
-    { name: 'Exchange', href: '#exchange-section', current: false },
-    { name: 'Features', href: '#features-section', current: false },
-    { name: 'FAQ', href: '#faq-section', current: false },
+    { name: 'Home', href: '#', current: true },
+  { name: 'Products', href: '#exchange-section', current: false },
+  { name: 'Categories', href: '#cateories-section', current: false },
+  { name: 'About', href: '#about-section', current: false },
+  { name: 'Contact Us', href: '#contact-section', current: false },
 ]
 
 function classNames(...classes: string[]) {

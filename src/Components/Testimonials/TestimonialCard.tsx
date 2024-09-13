@@ -8,7 +8,7 @@ interface TestimonialItemProps {
 
 const TestimonialCard: React.FC<TestimonialItemProps> = ({ testimonial }) => {
   return (
-    <div className="bg-white py-8 px-10 flex md:flex-row flex-col items-center gap-12 max-w-full w-full mx-auto">
+    <div className="py-8 px-10 flex md:flex-row flex-col items-center gap-12 max-w-full w-full mx-auto">
       <div className="md:basis-1/3 basis-full">
         <div
           style={{ backgroundImage: `url(${testimonial.avatar})` }}
