@@ -1,10 +1,9 @@
 import { Disclosure } from '@headlessui/react';
-import React from 'react';
+import React, { useState } from 'react';
 import { MenuIcon, SearchIcon } from '@heroicons/react/outline';
 import { ShoppingCartIcon, UserCircleIcon } from '@heroicons/react/solid';
 import Drawer from './Drawer';
 import Drawerdata from './Drawerdata';
-
 
 interface NavigationItem {
   name: string;
@@ -12,11 +11,12 @@ interface NavigationItem {
   current: boolean;
 }
 
-const navigation: NavigationItem[] = [
-  { name: 'Home', href: '#home-section', current: false },
-  { name: 'Exchange', href: '#exchange-section', current: false },
-  { name: 'Features', href: '#features-section', current: false },
-  { name: 'FAQ', href: '#faq-section', current: false },
+const initialNavigation: NavigationItem[] = [
+  { name: 'Home', href: '#', current: true },
+  { name: 'Products', href: '#exchange-section', current: false },
+  { name: 'Categories', href: '#cateories-section', current: false },
+  { name: 'About', href: '#about-section', current: false },
+  { name: 'Contact Us', href: '#contact-section', current: false },
 ];
 
 function classNames(...classes: string[]) {
@@ -24,7 +24,19 @@ function classNames(...classes: string[]) {
 }
 
 const Navbar: React.FC = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  // State to manage the active link
+  const [navigation, setNavigation] = useState(initialNavigation);
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Function to handle setting the current active link
+  const handleSetActive = (name: string) => {
+    const updatedNavigation = navigation.map(item =>
+      item.name === name
+        ? { ...item, current: true }
+        : { ...item, current: false }
+    );
+    setNavigation(updatedNavigation);
+  };
 
   return (
     <Disclosure as="nav" className="navbar bg-[#c4c4c4]">
@@ -37,11 +49,7 @@ const Navbar: React.FC = () => {
               aria-hidden="true"
               onClick={() => setIsOpen(true)}
             />
-            <img
-              className="h-25 w-25"
-              src="/images/logo.png" 
-              alt="Crypto-Logo"
-            />
+            <img className="h-25 w-25" src="/images/logo.png" alt="Crypto-Logo" />
             <div className="flex items-center sm:space-x-6 space-x-3 lg:mr-4">
               <SearchIcon className="h-5 w-5 text-[#07484a]" aria-hidden="true" />
               <ShoppingCartIcon className="h-5 w-5 text-[#07484a]" aria-hidden="true" />
@@ -51,32 +59,25 @@ const Navbar: React.FC = () => {
 
           {/* Desktop Logo */}
           <div className="flex flex-1 items-center justify-start lg:justify-start lg:absolute lg:left-0">
-            <img
-              className="block h-10 w-20px lg:hidden"
-              src="/images/logo.png" 
-              alt="Crypto-Logo"
-            />
-            <img
-              className="hidden h-48px w-48px lg:block"
-              src="/images/logo.png" 
-              alt="Crypto-Logo"
-            />
+            <img className="block h-10 w-20px lg:hidden" src="/images/logo.png" alt="Crypto-Logo" />
+            <img className="hidden h-48px w-48px lg:block" src="/images/logo.png" alt="Crypto-Logo" />
           </div>
 
           {/* Desktop Menu Links */}
           <div className="hidden lg:flex flex-1 items-center justify-center">
             <div className="flex space-x-4">
-              {navigation.map((item) => (
+              {navigation.map(item => (
                 <a
                   key={item.name}
                   href={item.href}
+                  onClick={() => handleSetActive(item.name)} 
                   className={classNames(
                     item.current
-                      ? 'bg-gray-900 text-[#07484a] font-semibold underline'
-                      : 'text-[#07484a] hover:text-offwhite hover-underline',
-                    'px-3 py-4 rounded-md text-md font-normal'
+                    ? 'text-[#07484a] font-semibold underline underline-offset-2' // Adds a little space
+                    : 'text-[#07484a] hover:text-offwhite hover-underline',
+                  'px-3 py-4 rounded-md text-md font-normal'
                   )}
-                  aria-current={item.href ? 'page' : undefined}
+                  aria-current={item.current ? 'page' : undefined}
                 >
                   {item.name}
                 </a>
