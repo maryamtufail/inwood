@@ -11,7 +11,7 @@ interface DrawerProps {
 const Drawer: React.FC<DrawerProps> = ({ children, isOpen, setIsOpen }) => {
     return (
         <div
-            className={`fixed inset-0 z-10 bg-gray-900 bg-opacity-25 transition-transform duration-500 ease-in-out ${isOpen ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}
+            className={`fixed inset-0 z-10 bg-opacity-25 transition-transform duration-500 ease-in-out ${isOpen ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}
         >
             <div
                 className={`w-80 max-w-sm h-full bg-white shadow-lg transition-transform duration-500 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
