@@ -1,72 +1,20 @@
+// src/components/ProductSlider.tsx
+import React, { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/scrollbar';
 import { Scrollbar } from 'swiper/modules';
 import ProductItem from './ProductItem';
-import { useRef } from 'react';
 import { Swiper as SwiperType } from 'swiper/types';
-
-const products = [
-  {
-    imageUrl: '/images/product/chair.svg',
-    title: 'Armchair',
-    description: 'Light single chair',
-    price: '$145',
-    bgColor: 'bg-[#caf3e5]',
-  },
-  {
-    imageUrl: '/images/product/sofa.svg',
-    title: 'Premium Sofa',
-    description: 'Elegant and comfy',
-    price: '$225',
-    bgColor: 'bg-[#e0eff6]',
-  },
-  {
-    imageUrl: '/images/product/sofa2.svg',
-    title: 'Minimal Sofa',
-    description: 'Light single chair',
-    price: '$145',
-    bgColor: 'bg-[#eeebff]',
-  },
-  {
-    imageUrl: '/images/product/chairlast.svg',
-    title: 'Dining Chair',
-    description: 'Modern design',
-    price: '$85',
-    bgColor: 'bg-[#fff4e7]',
-  },
-  {
-    imageUrl: '/images/image1.png',
-    title: 'Armchair',
-    description: 'Light single chair',
-    price: '$145',
-    bgColor: 'bg-[#caf3e5]',
-  },
-  {
-    imageUrl: '/images/image2.png',
-    title: 'Premium Sofa',
-    description: 'Elegant and comfy',
-    price: '$225',
-    bgColor: 'bg-[#e0eff6]',
-  },
-  {
-    imageUrl: '/images/image3.png',
-    title: 'Minimal Sofa',
-    description: 'Light single chair',
-    price: '$145',
-    bgColor: 'bg-[#eeebff]',
-  },
-  {
-    imageUrl: '/images/image4.png',
-    title: 'Dining Chair',
-    description: 'Modern design',
-    price: '$85',
-    bgColor: 'bg-[#fff4e7]',
-  },
-];
+import { useFetchFurniture } from '../../hooks/useFetchFurniture';
+import { getColor } from '../../api/colorUtils';
 
 const ProductSlider: React.FC = () => {
   const swiperRef = useRef<SwiperType | null>(null);
+
+
+
+  const { data, error, isLoading } = useFetchFurniture();
 
   const nextSlide = () => {
     if (swiperRef.current) {
@@ -80,8 +28,11 @@ const ProductSlider: React.FC = () => {
     }
   };
 
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
+
   return (
-    <div className="ml-20 lg:ml-[320px] px-2">
+    <div className="ml-20 py-12 lg:ml-[320px] px-2">
       <Swiper
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         spaceBetween={10}
@@ -103,19 +54,19 @@ const ProductSlider: React.FC = () => {
           },
         }}
       >
-        {products.map((product, index) => (
-          <SwiperSlide key={index} className="bg-white rounded-lg py-12">
+        {data?.products.map((product, index) => (
+          <SwiperSlide key={product.id} className="bg-white rounded-lg py-12"        style={{ backgroundColor: getColor(index) }}>
             <ProductItem
-              imageUrl={product.imageUrl}
               title={product.title}
-              description={product.description}
-              price={product.price}
-              bgColor={product.bgColor}
+              price={`$${product.price.toFixed(2)}`}
+              brand={product.brand}
+              thumbnail={product.thumbnail}
+              
             />
           </SwiperSlide>
         ))}
       </Swiper>
-      {/* navigation */}
+      {/* Navigation */}
       <div className="flex flex-row items-center justify-end p-3 space-x-4">
         <button
           className="bg-blue-100 p-3 rounded-full text-blue-500"

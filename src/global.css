@@ -6,12 +6,8 @@ body {
   background-color: #fdfbf8;
 }
 
-.swiper-scrollbar {
-  background-color: #07484a;
-}
-
-.swiper-scrollbar-horizontal {
-  margin-top: 10px;
+.swiper-wrapper {
+  margin: 38px !important;
 }
 
 .swiper-scrollbar-drag {
@@ -34,15 +30,12 @@ body {
 .special .swiper-scrollbar-vertical {
   width: 5px;
   border: 0;
-  top: -126px; 
+  top: -126px;
   margin-right: 19px;
 }
-
-
 
 @media (min-width: 1920px) {
   .special .swiper-container {
     height: 480px;
-   
   }
 }
