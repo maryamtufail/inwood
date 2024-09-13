@@ -7,7 +7,7 @@ const SearchBar: React.FC = () => {
       <input
         type="text"
         placeholder="Search"
-        className="w-full pl-10 pr-4 py-2 text-sm focus:outline-none "
+        className="w-full pl-10 pr-4 py-2 text-sm focus:outline-none bg-transparent "
       />
     </div>
   );

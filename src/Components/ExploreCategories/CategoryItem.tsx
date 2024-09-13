@@ -1,5 +1,3 @@
-
-
 interface CategoryItemProps {
   name: string;
   active?: boolean;
@@ -15,6 +13,7 @@ const CategoryItem: React.FC<CategoryItemProps> = ({ name, active = false }) => 
       }`}
     >
       {name}
+      
     </div>
   );
 };

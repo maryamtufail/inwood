@@ -1,27 +1,21 @@
-import CategoryItem from "./CategoryItem";
-import { ArrowRightIcon } from "@heroicons/react/solid";
+import CategoryItem from './CategoryItem';
 
 const CategoryList: React.FC = () => {
   const categories = [
-    "Bedroom",
-    "Dinning Room",
-    "Meeting Room",
-    "Workspace",
-    "Living Room",
-    "Kitchen",
-    "Living Space",
+    'Bedroom',
+    'Dinning Room',
+    'Meeting Room',
+    'Workspace',
+    'Living Room',
+    'Kitchen',
+    'Living Space',
   ];
 
   return (
-    <div className="flex flex-col space-y-12 pt-8">
+    <div className="flex flex-col lg:flex-row xl:flex-col xl:space-y-12 flex-wrap pt-8 lg:w-[520px] justify-center">
       {categories.map((category, index) => (
-        <CategoryItem key={index} name={category}  />
+        <CategoryItem key={index} name={category} />
       ))}
-           <button className="mt-8 py-7 bg-teal-600 text-white rounded-lg text-sm lg:text-base flex items-center justify-center">
-        All Categories 
-        <ArrowRightIcon className="w-5 h-5 ml-2" />
-      </button>
-
     </div>
   );
 };

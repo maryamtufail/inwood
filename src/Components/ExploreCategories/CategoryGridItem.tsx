@@ -1,5 +1,3 @@
-
-
 interface CategoryGridItemProps {
   title: string;
   active?: boolean;

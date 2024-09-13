@@ -3,7 +3,6 @@ import SearchBar from './SearchBar';
 import CategoryList from './CategoryList';
 import MobileCategoryDrawer from './MobileCategoryDrawer';
 import CategoryGrid from './CategoryGrid';
-import Tabs from './Tabs';
 import { ArrowRightIcon, MenuIcon } from '@heroicons/react/solid';
 
 const ExploreSection: React.FC = () => {
@@ -15,25 +14,19 @@ const ExploreSection: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center px-4 py-8 lg:px-8 lg:py-24 w-full">
-      <h2 className="lg:pb-12 text-3xl lg:text-4xl font-bold mb-8 text-gray-800 text-center ">
+      <h2 className="lg:pb-12 text-3xl lg:text-4xl font-bold mb-8  text-center ">
         Explore by Category
       </h2>
 
-      {/* SearchBar and Tabs for medium screens */}
-      <div className="xl:hidden hidden lg:flex flex-col items-center md:space-y-4 mb-12">
-        <SearchBar />
-        <Tabs />
-        <button className="mt-8 py-7 px-12  bg-teal-600 text-white rounded-lg text-sm lg:text-base flex items-center justify-center">
-          All Categories
-          <ArrowRightIcon className="w-5 h-5 ml-2" />
-        </button>
-      </div>
-
-      <section className="flex flex-col lg:flex-row justify-between items-center xl:gap-8 max-w-7xl w-full">
+      <section className="flex flex-col  lg:flex-col xl:flex-row justify-between items-center xl:gap-8 max-w-7xl w-full">
         {/* SearchBar and Category list for desktop */}
-        <div className="hidden xl:block xl:w-1/4 w-full mb-8 xl:mb-0 space-y-8">
+        <div className="hidden lg:flex lg:flex-col xl:block xl:w-1/4 max-w-3xl mb-8 xl:mb-0 xl:space-y-8 items-center ">
           <SearchBar />
           <CategoryList />
+          <button className="mt-8 px-12 py-7 bg-teal-600 text-white rounded-lg text-sm lg:text-base flex items-center justify-center">
+            All Categories
+            <ArrowRightIcon className="w-5 h-5 ml-2" />
+          </button>
         </div>
 
         {/* SearchBar and Hamburger Icon for mobile */}
@@ -49,7 +42,7 @@ const ExploreSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Right side: Category grid */}
+        {/* Category grid */}
         <div className="xl:w-3/4 w-full">
           <CategoryGrid />
         </div>
