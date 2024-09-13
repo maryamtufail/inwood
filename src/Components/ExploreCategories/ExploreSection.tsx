@@ -20,7 +20,7 @@ const ExploreSection: React.FC = () => {
       </h2>
 
       {/* SearchBar and Tabs for medium screens */}
-      <div className="hidden lg:hidden md:flex flex-col items-center md:space-y-4 mb-12">
+      <div className="xl:hidden hidden lg:flex flex-col items-center md:space-y-4 mb-12">
         <SearchBar />
         <Tabs />
         <button className="mt-8 py-7 px-12  bg-teal-600 text-white rounded-lg text-sm lg:text-base flex items-center justify-center">
@@ -29,15 +29,15 @@ const ExploreSection: React.FC = () => {
         </button>
       </div>
 
-      <section className="flex flex-col lg:flex-row justify-between items-center lg:gap-8 max-w-7xl w-full">
+      <section className="flex flex-col lg:flex-row justify-between items-center xl:gap-8 max-w-7xl w-full">
         {/* SearchBar and Category list for desktop */}
-        <div className="hidden lg:block lg:w-1/4 w-full mb-8 lg:mb-0 space-y-8">
+        <div className="hidden xl:block xl:w-1/4 w-full mb-8 xl:mb-0 space-y-8">
           <SearchBar />
           <CategoryList />
         </div>
 
         {/* SearchBar and Hamburger Icon for mobile */}
-        <div className="md:hidden w-full flex justify-center items-center mb-8">
+        <div className="lg:hidden w-full sm:flex justify-center items-center mb-8">
           <div className="flex items-center justify-between w-full">
             <SearchBar />
             <button
@@ -50,7 +50,7 @@ const ExploreSection: React.FC = () => {
         </div>
 
         {/* Right side: Category grid */}
-        <div className="lg:w-3/4 w-full">
+        <div className="xl:w-3/4 w-full">
           <CategoryGrid />
         </div>
 

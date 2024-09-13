@@ -38,7 +38,7 @@ const Benefit: React.FC = () => {
         </h3>
       </div>
 
-      <div className="flex sm:flex-row flex-col gap-28 justify-center items-center">
+      <div className="flex md:flex-row flex-col gap-28 justify-center items-center">
         {benefitData.map((item, index) => (
           <div key={index} className="text-center">
             <div className="flex justify-center items-center">
