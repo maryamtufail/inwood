@@ -4,7 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 html {
   scroll-behavior: smooth;
 }
@@ -19,7 +18,7 @@ body {
 }
 
 .swiper-wrapper {
-  margin: 38px !important;
+  margin-bottom: 38px !important;
 }
 
 .swiper-scrollbar-drag {
@@ -51,4 +50,3 @@ body {
     height: 480px;
   }
 }
-

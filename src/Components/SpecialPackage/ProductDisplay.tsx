@@ -6,18 +6,17 @@ interface ProductDisplayProps {
   name: string;
   price: string;
   rating: number;
-  description: string; // Add description prop
+  description: string;
 }
 
 const ProductDisplay: React.FC<ProductDisplayProps> = ({
   name,
   price,
   rating,
-  description, // Destructure description
+  description,
 }) => {
   const [isLargeScreen, setIsLargeScreen] = useState<boolean>(true);
 
-  // Check screen size and set state
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1920) {
@@ -27,13 +26,9 @@ const ProductDisplay: React.FC<ProductDisplayProps> = ({
       }
     };
 
-    // Initial check
     handleResize();
-
-    // Event listener for window resize
     window.addEventListener('resize', handleResize);
 
-    // Cleanup the event listener on component unmount
     return () => {
       window.removeEventListener('resize', handleResize);
     };
