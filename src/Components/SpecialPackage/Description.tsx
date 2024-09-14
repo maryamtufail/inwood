@@ -19,7 +19,7 @@ const Description: React.FC<DescriptionProps> = ({ description }) => {
   }, [description]);
 
   return (
-    <div className="w-[720px]">
+    <div className="xl:w-[720px]">
       <h3 className="text-xl font-semibold">Description</h3>
       <p
         ref={descriptionRef}
