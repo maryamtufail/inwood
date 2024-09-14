@@ -26,10 +26,16 @@ const Banner: React.FC = () => {
               </div>
             </div>
             <div className="relative sm:hidden md:hidden lg:block lg:col-span-5 flex items-center justify-center lg:justify-end">
+              <div className="absolute left-8 flex items-center justify-center w-32 h-32 bg-[#a9b2b2af] text-white font-semibold text-md rounded-full">
+                <span className="font-bold text-xl flex">UP To </span>
+                <br />
+                50% off
+              </div>
+
               <img
                 src="/images/banner/couch.svg"
                 alt="Furniture"
-                className="w-full h-auto max-w-full object-cover m-12"
+                className="w-full h-auto max-w-full object-cover"
               />
             </div>
           </div>
