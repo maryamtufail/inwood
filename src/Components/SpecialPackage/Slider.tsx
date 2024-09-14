@@ -111,7 +111,7 @@ const Slider: React.FC<SliderProps> = ({ products, onProductSelect }) => {
         ))}
       </Swiper>
 
-      <div className="absolute right-0 bottom-0 xl:flex xl:flex-col hidden space-y-3">
+      <div className="z-10 absolute right-0 bottom-0 xl:flex xl:flex-col hidden space-y-3">
         <button
           className="bg-blue-100 size-12 rounded-full text-blue-500 flex items-center justify-center"
           onClick={handlePrev}
