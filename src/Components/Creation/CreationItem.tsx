@@ -11,7 +11,7 @@ export const CreationItem: React.FC<ProductItemProps> = ({ product }) => {
       <img
         src={product.thumbnail}
         alt={product.title}
-        className="w-full h-[210] object-cover mb-2"
+        className="w-full h-[500px] object-cover mb-2"
       />
       <div className="flex justify-around">
        
