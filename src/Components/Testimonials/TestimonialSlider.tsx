@@ -1,50 +1,41 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import TestimonialCard from './TestimonialCard';
 import { useFetchTestimonial } from '../../hooks/useFetchTestimonial';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Scrollbar } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/scrollbar';
+import { ArrowRightIcon } from '@heroicons/react/solid';
 
 const TestimonialSlider: React.FC = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const { data, error, isLoading } = useFetchTestimonial();
+    const { data, error, isLoading } = useFetchTestimonial();
+  const swiperRef = useRef<any>(null);
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
 
-  const nextSlide = () => {
-    if (data) {
-      setCurrentSlide((prev) => (prev - 1) % data.testimonials.length);
-    }
-  };
-
-  const prevSlide = () => {
-    if (data) {
-      setCurrentSlide(
-        (prev) =>
-          (prev + 1 + data.testimonials.length) % data.testimonials.length
-      );
-    }
-  };
-
   return (
     <div className="relative max-w-[80%] mx-auto">
-      <div className="overflow-hidden">
-        <div
-          className="flex transition-transform duration-500"
-          style={{ transform: `translateX(-${100 * currentSlide}%)` }}
-        >
-          {data?.testimonials.map((testimonial) => (
-            <div key={testimonial.id} className="flex-none w-full">
-              <TestimonialCard testimonial={testimonial} />
-            </div>
-          ))}
-        </div>
-      </div>
+      <Swiper
+        onSwiper={(swiper) => (swiperRef.current = swiper)}
+        spaceBetween={50}
+        slidesPerView={1}
+        scrollbar={{ draggable: true }}
+        modules={[Scrollbar]}
+        className="testimonials"
+      >
+        {data?.testimonials.map((testimonial) => (
+          <SwiperSlide key={testimonial.id}>
+            <TestimonialCard testimonial={testimonial} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
 
-      {/* navigation */}
-      <div className="absolute inset-y-0 right-0 hidden lg:flex flex-col items-center justify-center space-y-4">
+      {/* Custom Navigation Buttons */}
+      <div className="absolute hidden inset-y-0 right-4 z-10 xl:flex flex-col items-center justify-center space-y-4">
         <button
           className="bg-blue-100 p-3 rounded-full text-blue-500"
-          onClick={nextSlide}
+          onClick={() => swiperRef.current?.slidePrev()}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +43,7 @@ const TestimonialSlider: React.FC = () => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="size-5"
+            className="w-6 h-6"
           >
             <path
               strokeLinecap="round"
@@ -63,7 +54,7 @@ const TestimonialSlider: React.FC = () => {
         </button>
         <button
           className="bg-red-100 p-3 rounded-full text-red-500"
-          onClick={prevSlide}
+          onClick={() => swiperRef.current?.slideNext()}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -71,7 +62,7 @@ const TestimonialSlider: React.FC = () => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="size-5"
+            className="w-6 h-6"
           >
             <path
               strokeLinecap="round"
@@ -81,6 +72,15 @@ const TestimonialSlider: React.FC = () => {
           </svg>
         </button>
       </div>
+       {/* all reviews link */}
+   
+          <a
+            href="#"
+            className="flex items-center justify-center text-lg hover:underline mt-2"
+          >
+            See all reviews <ArrowRightIcon className="h-5 w-5 ml-2" />
+          </a>
+       
     </div>
   );
 };

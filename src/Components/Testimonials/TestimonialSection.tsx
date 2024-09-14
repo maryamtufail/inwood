@@ -1,4 +1,3 @@
-import { ArrowRightIcon } from '@heroicons/react/solid';
 import TestimonialSlider from './TestimonialSlider';
 
 const TestimonialSection: React.FC = () => {
@@ -10,16 +9,6 @@ const TestimonialSection: React.FC = () => {
 
         {/* testimonial slider */}
         <TestimonialSlider />
-
-        {/* all reviews link */}
-        <div className="mt-12">
-          <a
-            href="#"
-            className="flex items-center justify-center text-lg hover:underline"
-          >
-            See all reviews <ArrowRightIcon className="h-5 w-5 ml-2" />
-          </a>
-        </div>
       </div>
     </section>
   );
