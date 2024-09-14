@@ -1,22 +1,23 @@
+import { useFetchCategory } from '../../hooks/useFetchCategory';
 import CategoryGridItem from './CategoryGridItem';
 
 interface CategoryGridProps {
-  selectedCategory: keyof typeof dummyData; 
+  selectedCategory: string;
 }
 
-const dummyData: { [key: string]: string[] } = {
-  Bedroom: ['Bed', 'Wardrobe', 'Nightstand', 'Dresser', 'Mirror', 'Chair'],
-  Kitchen: ['Table', 'Chair', 'Stool', 'Cabinet', 'Shelf', 'Oven'],
-  LivingRoom: ['Sofa', 'TV Stand', 'Coffee Table', 'Bookshelf', 'Armchair', 'Lamp'],
-};
-
 const CategoryGrid: React.FC<CategoryGridProps> = ({ selectedCategory }) => {
-  const gridItems = dummyData[selectedCategory] || []; 
+ 
+  const { data: categories = [], isLoading, isError } = useFetchCategory(); 
+  if (isLoading) return <div>Loading...</div>;
+  if (isError) return <div>Error loading categories</div>;
+
+  const category = categories.find(cat => cat.name === selectedCategory);
+  const gridItems = category?.items || []; 
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {gridItems.map((item, index) => (
-        <CategoryGridItem key={index} title={item} active={true} />
+      {gridItems.map((item) => (
+        <CategoryGridItem key={item.id}   image={item.image} title={item.name} active={true} />
       ))}
     </div>
   );

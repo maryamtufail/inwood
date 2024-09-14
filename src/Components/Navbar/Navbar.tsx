@@ -9,7 +9,7 @@ import Drawerdata from './Drawerdata';
 const initialNavigation: NavigationItem[] = [
   { name: 'Home', href: '#', current: true },
   { name: 'Products', href: '#product', current: false },
-  { name: 'Categories', href: '#cateories', current: false },
+  { name: 'Categories', href: '#categories', current: false },
   { name: 'About', href: '#about', current: false },
   { name: 'Contact Us', href: '#contact', current: false },
 ];
