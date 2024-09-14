@@ -10,7 +10,7 @@ const products = [
     price: '$229.99',
     rating: 5,
     description:
-      'Perfect for families, this set includes comfortable seating for everyone, featuring durable fabric and a modern design that enhances any living space.',
+      'Perfect for families, this set includes comfortable seating for everyone, featuring durable fabric and a modern design that enhances any living space. Perfect for families, this set includes comfortable seating for everyone, featuring durable fabric and a modern design that enhances any living space.',
   },
   {
     id: 2,
