@@ -10,7 +10,7 @@ const products = [
     price: '$229.99',
     rating: 5,
     description:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, minima?',
+      'Perfect for families, this set includes comfortable seating for everyone, featuring durable fabric and a modern design that enhances any living space.',
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const products = [
     price: '$329.99',
     rating: 4,
     description:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, minima?',
+      'Upgrade your living room with this special set that combines style and comfort. The plush cushions and sleek lines will elevate your home decor.',
   },
   {
     id: 3,
@@ -26,35 +26,34 @@ const products = [
     price: '$587.99',
     rating: 4,
     description:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, minima?',
+      'Experience ultimate luxury with this premium set, crafted with high-quality materials and designed for sophisticated living spaces. Perfect for hosting guests.',
   },
   {
     id: 4,
-    name: 'Living Room Luxury Set',
-    price: '$587.99',
-    rating: 4,
+    name: 'Living Room Comfort Set',
+    price: '$459.99',
+    rating: 5,
     description:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, minima?',
+      'A perfect blend of comfort and style, this set is ideal for relaxation. The deep cushions and soft fabric create a cozy atmosphere in any home.',
   },
-
   {
     id: 5,
-    name: 'Living Room Luxury Set',
-    price: '$587.99',
+    name: 'Living Room Modern Set',
+    price: '$299.99',
     rating: 4,
     description:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, minima?',
+      'Embrace modern living with this stylish set. With clean lines and a minimalist design, it brings a fresh, contemporary look to your living room.',
   },
-
   {
     id: 6,
-    name: 'Living Room Luxury Set',
-    price: '$587.99',
+    name: 'Living Room Classic Set',
+    price: '$389.99',
     rating: 4,
     description:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt, minima?',
+      'A timeless design that never goes out of style, this classic living room set features elegant details and high-quality craftsmanship for a luxurious feel.',
   },
 ];
+
 
 const SpecialPackage = () => {
   const [activeProduct, setActiveProduct] = useState(products[0]);
@@ -94,14 +93,15 @@ const SpecialPackage = () => {
             name={activeProduct.name}
             rating={activeProduct.rating}
             price={activeProduct.price}
+            description={activeProduct.description}
           />
         </div>
 
         {/* Description and Slider */}
 
         <div className="basis-full lg:basis-2/5 ">
-          {!isOtherScreen && <Description />}
-          <Slider products={products} onProductSelect={setActiveProduct} />
+          {!isOtherScreen && <Description   description={activeProduct.description}/>}
+          <Slider products={products} onProductSelect={setActiveProduct}/>
         </div>
       </div>
     </section>

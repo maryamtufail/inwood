@@ -6,12 +6,14 @@ interface ProductDisplayProps {
   name: string;
   price: string;
   rating: number;
+  description: string; // Add description prop
 }
 
 const ProductDisplay: React.FC<ProductDisplayProps> = ({
   name,
   price,
   rating,
+  description, // Destructure description
 }) => {
   const [isLargeScreen, setIsLargeScreen] = useState<boolean>(true);
 
@@ -69,7 +71,7 @@ const ProductDisplay: React.FC<ProductDisplayProps> = ({
         </div>
 
         {/* Conditionally render Description based on screen size */}
-        {!isLargeScreen && <Description />}
+        {!isLargeScreen && <Description description={description} />}
       </div>
     </div>
   );
