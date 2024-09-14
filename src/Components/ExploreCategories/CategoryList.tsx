@@ -1,9 +1,14 @@
 import CategoryItem from './CategoryItem';
 
-const CategoryList: React.FC = () => {
+interface CategoryListProps {
+  selectedCategory: string;
+  onSelectCategory: (category: string) => void;
+}
+
+const CategoryList: React.FC<CategoryListProps> = ({ selectedCategory, onSelectCategory }) => {
   const categories = [
     'Bedroom',
-    'Dinning Room',
+    'Dining Room',
     'Meeting Room',
     'Workspace',
     'Living Room',
@@ -14,7 +19,12 @@ const CategoryList: React.FC = () => {
   return (
     <div className="flex flex-col lg:flex-row xl:flex-col xl:space-y-12 flex-wrap pt-8 lg:w-[520px] justify-center">
       {categories.map((category, index) => (
-        <CategoryItem key={index} name={category} />
+        <CategoryItem
+          key={index}
+          name={category}
+          active={category === selectedCategory}
+          onClick={() => onSelectCategory(category)}
+        />
       ))}
     </div>
   );
