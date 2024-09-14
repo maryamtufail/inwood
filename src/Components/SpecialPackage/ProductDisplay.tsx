@@ -37,12 +37,17 @@ const ProductDisplay: React.FC<ProductDisplayProps> = ({
   return (
     <div className="flex flex-col xl:flex-col lg:flex-row gap-6">
       {/* Placeholder Image */}
-      <div className="w-full min-h-96 bg-gray-300 rounded-lg mb-4 lg:mb-0"></div>
+      <div className="w-full h-[350px] bg-gray-300 rounded-lg mb-4 lg:mb-0"></div>
 
       {/* Product Details */}
-      <div className="w-full lg:w-3/5 md:w-3/5 sm:w-full">
+      <div className="">
         <div className="mb-5">
-          <h2 className="text-2xl font-semibold text-gray-800">{name}</h2>
+        <div className='flex flex-row justify-between w-full'>  <h2 className="text-2xl font-semibold text-gray-800">{name}</h2>
+            {/* Add to Cart Button */}
+            <button className="flex items-center gap-3 justify-center bg-[#70908b] text-white px-6 py-3 rounded-md  hover:bg-transparent border hover:border-[#70908b] transition-all">
+            Add to Cart
+            <ShoppingCartIcon className="w-5 h-5" />
+          </button></div>
           <div className="text-yellow-500 flex my-2">
             {Array(rating)
               .fill('')
@@ -58,11 +63,7 @@ const ProductDisplay: React.FC<ProductDisplayProps> = ({
               ))}
           </div>
           <p className="text-xl text-gray-900 font-bold">{price}</p>
-          {/* Add to Cart Button */}
-          <button className="flex items-center gap-3 justify-center bg-[#70908b] text-white px-6 py-3 rounded-md my-12 hover:bg-transparent border hover:border-[#70908b] transition-all">
-            Add to Cart
-            <ShoppingCartIcon className="w-5 h-5" />
-          </button>
+        
         </div>
 
         {/* Conditionally render Description based on screen size */}

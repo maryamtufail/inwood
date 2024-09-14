@@ -46,12 +46,12 @@ const Slider: React.FC<SliderProps> = ({ products, onProductSelect }) => {
     <div className="relative mt-8 special">
       <Swiper
         ref={swiperRef}
-        loop={true} // Enable loop
+        loop={true} 
         modules={[Scrollbar]}
         scrollbar={{ draggable: true }}
         slidesPerView={1}
         spaceBetween={20}
-        onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)} // Use realIndex
+        onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)} 
         className="swiper-container"
         breakpoints={{
           320: {
@@ -75,14 +75,14 @@ const Slider: React.FC<SliderProps> = ({ products, onProductSelect }) => {
         {products.map((product) => (
           <SwiperSlide
             key={product.id}
-            className={`flex ${product.id === products[activeIndex].id ? 'swiper-slide-active w-[720px]' : ''}`}
+            className={`flex ${product.id === products[activeIndex].id ? 'swiper-slide-active w-[460px]' : ' w-[420px]'}`}
           >
             <div className="h-[149px] w-[248px] bg-gray-300 rounded-lg" />
             <div
-              className={`flex-grow flex items-center justify-between p-4 ${product.id === products[activeIndex].id ? 'border rounded-lg bg-[#e0f6f1]' : ''}`}
+              className={`flex-grow flex items-center justify-between p-4 ml-2 ${product.id === products[activeIndex].id ? 'border rounded-lg bg-[#e0f6f1]' : ''}`}
             >
-              <div>
-                <div className="flex justify-between">
+              <div className='class="flex flex-col w-full items-center justify-center"'>
+                <div className="flex w-full justify-between">
                   <h4 className="text-lg font-semibold text-gray-800">
                     {product.name}
                   </h4>

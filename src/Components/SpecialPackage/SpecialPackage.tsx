@@ -82,7 +82,7 @@ const SpecialPackage = () => {
   }, []);
 
   return (
-    <section className="mx-auto px-4 py-12">
+    <section className="mx-auto px-4 py-12 max-w-7xl">
       <h1 className="text-3xl lg:text-4xl font-bold text-center mb-10">
         Special Package
       </h1>
@@ -98,7 +98,6 @@ const SpecialPackage = () => {
         </div>
 
         {/* Description and Slider */}
-
         <div className="basis-full lg:basis-2/5 ">
           {!isOtherScreen && <Description   description={activeProduct.description}/>}
           <Slider products={products} onProductSelect={setActiveProduct}/>
