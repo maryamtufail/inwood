@@ -2,10 +2,16 @@ import ProductSlider from './ProductSlider';
 
 const Product: React.FC = () => {
   return (
-    <section id="product" className="pt-24 pb-24 px-0 ">
+    <section id="product" className="pt-24 pb-24 px-0 relative">
+       <img 
+       src="/images/product/container.svg"
+        alt="Decorative SVG" 
+        className="absolute left-0 transform -translate-x-1/2"
+        style={{ top: '50%', transform: 'translateY(-50%)' }}
+      />
       {/* Header Section */}
       <div className="flex w-full justify-center items-center">
-        <span className="text-4xl font-bold text-[#07484a]">
+        <span className="text-5xl font-bold text-[#07484a]">
           Popular Products
         </span>
       </div>

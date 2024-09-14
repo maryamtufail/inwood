@@ -32,7 +32,7 @@ const ProductSlider: React.FC = () => {
   if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <div className="ml-20 py-12 lg:ml-[320px] px-2">
+    <div className="ml-20 py-12 xl:ml-[320px] px-2">
       <Swiper
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         spaceBetween={10}
