@@ -8,7 +8,7 @@ interface ProductDisplayProps {
   rating: number;
   description: string;
   thumbnail: string;
-  brand: string;
+ 
 }
 
 const ProductDisplay: React.FC<ProductDisplayProps> = ({

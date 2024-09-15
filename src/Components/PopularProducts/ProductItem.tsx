@@ -1,6 +1,5 @@
 interface ProductItemProps {
   title: string;
-  brand: string;
   price: string;
   thumbnail: string;
 }
@@ -8,7 +7,7 @@ interface ProductItemProps {
 const ProductItem: React.FC<ProductItemProps> = ({
   thumbnail,
   title,
-  brand,
+
   price,
 }) => {
   return (
@@ -24,7 +23,6 @@ const ProductItem: React.FC<ProductItemProps> = ({
       {/* Content Section */}
       <div className="flex flex-col items-start w-full text-[#70908b] ">
         <span className="text-2xl font-bold ">{title}</span>
-        <p className="text-lg font-normal mt-7">{brand}</p>
         <span className="text-2xl font-bold  mt-7">{price}</span>
       </div>
     </div>

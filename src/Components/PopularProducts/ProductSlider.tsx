@@ -1,4 +1,3 @@
-// src/components/ProductSlider.tsx
 import React, { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -61,7 +60,6 @@ const ProductSlider: React.FC = () => {
             <ProductItem
               title={product.title}
               price={`$${product.price.toFixed(2)}`}
-              brand={product.brand}
               thumbnail={product.thumbnail}
             />
           </SwiperSlide>
