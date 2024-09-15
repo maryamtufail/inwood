@@ -1,9 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { getColor } from '@/api/colorUtils';
-
 interface CategoryGridItemProps {
   title: string;
-  image: any;
+  image: string;
   active?: boolean;
 }
 
@@ -12,23 +9,6 @@ const CategoryGridItem: React.FC<CategoryGridItemProps> = ({
   image,
   active = false,
 }) => {
-  const [overlayColor, setOverlayColor] =
-    useState<string>('rgba(0, 0, 0, 0.5)');
-
-  useEffect(() => {
-    const fetchOverlayColor = async () => {
-      try {
-        const color = await getColor(image);
-        setOverlayColor(`rgba(${color}, 0.5)`);
-      } catch (error) {
-        console.error('Failed to fetch color:', error);
-        setOverlayColor('rgba(0, 0, 0, 0.5)');
-      }
-    };
-
-    fetchOverlayColor();
-  }, [image]);
-
   return (
     <div
       className={`relative flex flex-col items-center justify-center min-h-[250px] rounded-xl ${!active ? 'shadow-lg' : ''}`}
@@ -36,13 +16,14 @@ const CategoryGridItem: React.FC<CategoryGridItemProps> = ({
       <img
         src={image}
         alt={title}
+        loading="lazy"
         className="w-full h-[250px] object-cover rounded-xl"
       />
 
       <div
         className="absolute inset-0 rounded-xl"
         style={{
-          backgroundColor: overlayColor,
+          backgroundColor: 'rgba(0, 0, 0, 0.5)',
         }}
       />
 
