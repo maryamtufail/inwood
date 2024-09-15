@@ -11,7 +11,6 @@ const ProductItem: React.FC<ProductItemProps> = ({
 }) => {
   return (
     <div className={`p-6 rounded-lg py-12`}>
-      {/* Image Section */}
       <div className="flex justify-center items-center w-full mb-12">
         <div
           className="h-[260px] w-full bg-center bg-no-repeat"
@@ -19,8 +18,7 @@ const ProductItem: React.FC<ProductItemProps> = ({
         />
       </div>
 
-      {/* Content Section */}
-      <div className="flex flex-col items-start w-full text-[#70908b] ">
+      <div className="flex flex-col items-start w-full text-secondary ">
         <span className="text-2xl font-bold ">{title}</span>
         <span className="text-2xl font-bold  mt-7">{price}</span>
       </div>

@@ -7,6 +7,10 @@ import ProductItem from './ProductItem';
 import { Swiper as SwiperType } from 'swiper/types';
 import { useFetchFurniture } from '@/hooks/useFetchFurniture';
 import { getColor } from '@/api/colorUtils';
+import {
+  ArrowNarrowLeftIcon,
+  ArrowNarrowRightIcon,
+} from '@heroicons/react/outline';
 
 const ProductSlider: React.FC = () => {
   const swiperRef = useRef<SwiperType | null>(null);
@@ -54,7 +58,7 @@ const ProductSlider: React.FC = () => {
         {data?.products.map((product, index) => (
           <SwiperSlide
             key={product.id}
-            className="bg-white rounded-lg py-12"
+            className="rounded-lg py-12"
             style={{ backgroundColor: getColor(index) }}
           >
             <ProductItem
@@ -71,39 +75,13 @@ const ProductSlider: React.FC = () => {
           className="bg-blue-100 p-3 rounded-full text-blue-500"
           onClick={prevSlide}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="size-5"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"
-            />
-          </svg>
+          <ArrowNarrowLeftIcon className="w-6 h-6 inline-block" />
         </button>
         <button
           className="bg-red-100 p-3 rounded-full text-red-500"
           onClick={nextSlide}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="size-5"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
-            />
-          </svg>
+          <ArrowNarrowRightIcon className="w-6 h-6 inline-block" />
         </button>
       </div>
     </div>
