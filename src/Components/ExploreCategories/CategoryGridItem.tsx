@@ -1,3 +1,5 @@
+import Button from '../Button/Button';
+
 interface CategoryGridItemProps {
   title: string;
   image: string;
@@ -28,12 +30,8 @@ const CategoryGridItem: React.FC<CategoryGridItemProps> = ({
       />
 
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
-        <h3 className="text-3xl font-semibold text-white">{title}</h3>
-        {active && (
-          <button className="mt-7 px-8 py-2 bg-white text-[#4e7778] font-semibold rounded-lg">
-            Explore
-          </button>
-        )}
+        <h3 className="text-3xl font-semibold text-textSecondary">{title}</h3>
+        {active && <Button  label="Explore" aria-label="Explore" />}
       </div>
     </div>
   );

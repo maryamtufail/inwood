@@ -12,11 +12,10 @@ export default {
       colors: {
         primary: '#07484a',
         secondary: '#70908b',
+        background: '#ffffff',
         accent: '#c4c4c4',
-        textPrimary: "#07484a",
-        textSecondary: "#ffffff",
-        border: '#70908b',
-        buttonHover: '#07484a',
+        textPrimary: '#07484a',
+        textSecondary: '#ffffff',
       },
       keyframes: {
         zoomIn: {

@@ -29,7 +29,7 @@ const ExploreSection: React.FC = () => {
             selectedCategory={selectedCategory}
             onSelectCategory={setSelectedCategory}
           />
-          <button className="mt-8 px-12 py-7 bg-teal-600 text-white rounded-lg text-sm lg:text-base flex items-center justify-center">
+          <button className="mt-8 px-12 py-7 bg-secondary text-textSecondary rounded-lg text-sm lg:text-base flex items-center justify-center">
             All Categories
             <ArrowRightIcon className="w-5 h-5 ml-2" />
           </button>
@@ -41,7 +41,7 @@ const ExploreSection: React.FC = () => {
               className="ml-4 p-2 focus:outline-none"
               onClick={toggleDrawer}
             >
-              <MenuIcon className="w-6 h-6 text-gray-600" />
+              <MenuIcon className="w-6 h-6 text-accent" />
             </button>
           </div>
         </div>
