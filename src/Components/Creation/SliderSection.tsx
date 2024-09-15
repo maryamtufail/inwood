@@ -20,7 +20,7 @@ const SliderSection: React.FC<SliderSectionProps> = ({
   products,
 }) => {
   return (
-    <div className="xl:w-3/4 md:w-1/2 mt-12 md:mt-0 h-[790px] xl:h-[737px] pl-4 md:pl-12 flex items-center justify-center">
+    <div className="xl:w-3/4 sm:w-1/2 md:w-1/2 mt-12 md:mt-0 h-[790px] xl:h-[737px] pl-4 md:pl-2 flex items-center justify-center">
       <Swiper
         spaceBetween={10}
         slidesPerView={3}
