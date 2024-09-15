@@ -60,7 +60,7 @@ const ProductDisplay: React.FC<ProductDisplayProps> = ({
 
       <div className="flex flex-col xl:flex-col lg:flex-row gap-6 relative px-4 xl:px-12">
         <div
-          className="w-full h-[210px] xl:h-[510px] bg-secondary rounded-lg mb-4 lg:mb-0 bg-cover bg-center relative"
+          className="w-full h-[450px] xl:h-[510px] bg-secondary rounded-lg mb-4 lg:mb-0 bg-cover bg-center relative"
           style={{ backgroundImage: `url(${thumbnail})` }}
         >
           <button
