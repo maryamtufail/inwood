@@ -15,6 +15,7 @@ const products = [
       'Perfect for families, this set includes comfortable seating for everyone, featuring durable fabric and a modern design that enhances any living space. Perfect for families, this set includes comfortable seating for everyone, featuring durable fabric and a modern design that enhances any living space.',
     thumbnail:
       'https://images.pexels.com/photos/355508/pexels-photo-355508.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+      brand: "brand"
   },
 ];
 

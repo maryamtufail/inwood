@@ -12,8 +12,6 @@ import { getColor } from '../../api/colorUtils';
 const ProductSlider: React.FC = () => {
   const swiperRef = useRef<SwiperType | null>(null);
 
-
-
   const { data, error, isLoading } = useFetchFurniture();
 
   const nextSlide = () => {
@@ -55,18 +53,21 @@ const ProductSlider: React.FC = () => {
         }}
       >
         {data?.products.map((product, index) => (
-          <SwiperSlide key={product.id} className="bg-white rounded-lg py-12"        style={{ backgroundColor: getColor(index) }}>
+          <SwiperSlide
+            key={product.id}
+            className="bg-white rounded-lg py-12"
+            style={{ backgroundColor: getColor(index) }}
+          >
             <ProductItem
               title={product.title}
               price={`$${product.price.toFixed(2)}`}
               brand={product.brand}
               thumbnail={product.thumbnail}
-              
             />
           </SwiperSlide>
         ))}
       </Swiper>
-      {/* Navigation */}
+
       <div className="flex flex-row items-center justify-end p-3 space-x-4">
         <button
           className="bg-blue-100 p-3 rounded-full text-blue-500"
