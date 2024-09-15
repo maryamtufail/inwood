@@ -39,14 +39,12 @@ const SpecialPackage = () => {
   }, []);
 
   const { data, error, isLoading } = useFetchFurniture();
-
-  // Handle loading and error states
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <section className="mx-auto px-4 py-12 max-w-7xl">
-      <h1 className="text-3xl lg:text-4xl font-bold text-center mb-10">
+    <section className="mx-auto pl-12 xl:px-24 py-16">
+      <h1 className="text-4xl lg:text-5xl font-bold text-center mb-12">
         Special Package
       </h1>
 

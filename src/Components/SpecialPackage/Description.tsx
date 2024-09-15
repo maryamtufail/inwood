@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 
 interface DescriptionProps {
@@ -13,7 +13,6 @@ const Description: React.FC<DescriptionProps> = ({ description }) => {
   useEffect(() => {
     if (descriptionRef.current) {
       const { scrollHeight, clientHeight } = descriptionRef.current;
-      // If the content is taller than the container, we have overflow
       setIsOverflowing(scrollHeight > clientHeight);
     }
   }, [description]);
@@ -23,7 +22,7 @@ const Description: React.FC<DescriptionProps> = ({ description }) => {
       <h3 className="text-xl font-semibold">Description</h3>
       <p
         ref={descriptionRef}
-        className={`mt-2 transition-all duration-300 ${isExpanded ? 'line-clamp-none' : 'line-clamp-2'}`}
+        className={`mt-2 transition-all duration-300 ${isExpanded ? 'line-clamp-none' : 'line-clamp-1'}`}
       >
         {description}
       </p>
