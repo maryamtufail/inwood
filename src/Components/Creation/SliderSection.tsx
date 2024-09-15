@@ -2,9 +2,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import { Swiper as SwiperClass } from 'swiper/types';
-import { Product } from '../../types/api';
+import { Product } from '@/types/api';
 import { CreationItem } from './CreationItem';
-import { getColor } from '../../api/colorUtils';
+import { getColor } from '@/api/colorUtils';
 
 interface SliderSectionProps {
   swiperRef: React.MutableRefObject<SwiperClass | null>;
@@ -50,14 +50,14 @@ const SliderSection: React.FC<SliderSectionProps> = ({
         {products.map((product, index) => (
           <SwiperSlide key={product.id}>
             <div
-              className={`w-full  md:h-[537px] py-2 bg-gray-100 rounded-md transform transition-transform duration-500 ease-in-out ${
+              className={`w-full  md:h-[537px] py-2 bg-accent rounded-md transform transition-transform duration-500 ease-in-out ${
                 index === activeIndex ? 'scale-95' : 'scale-90'
               }`}
               style={{ backgroundColor: getColor(index) }}
             >
               <CreationItem product={product} />
 
-              <button className="absolute bottom-0 left-0 text-xl w-full font-semibold text-[#ffffff] py-4 px-6 bg-[#70908b] hover:text-[#07484a] hover:bg-transparent border-2 border-[#70908b]  rounded mr-6">
+              <button className="absolute bottom-0 left-0 text-xl w-full font-semibold text-textSecondary py-4 px-6 bg-secondary hover:text-textPrimary hover:bg-transparent border-2 border-[#70908b]  rounded mr-6">
                 Explore All Bed
               </button>
             </div>

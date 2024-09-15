@@ -1,0 +1,24 @@
+[
+    {
+      "imgSrc": "/images/benefits/payment.svg",
+      "heading": "Payment Method",
+      "subheadingLine1": "We offer flexible payment",
+      "subheadingLine2": "options to make it easier.",
+      "bgColor": "#EEEBFF"
+    },
+    {
+      "imgSrc": "/images/benefits/support.svg",
+      "heading": "Return Policy",
+      "subheadingLine1": "You can return a product",
+      "subheadingLine2": "within 30 days.",
+      "bgColor": "#FFF4E7"
+    },
+    {
+      "imgSrc": "/images/benefits/return.svg",
+      "heading": "Customer Support",
+      "subheadingLine1": "Our customer support",
+      "subheadingLine2": "is 24/7.",
+      "bgColor": "#CAF3E5"
+    }
+  ]
+  

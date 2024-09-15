@@ -1,8 +1,8 @@
-import React, { useState, useRef } from 'react';
-import LeftSection from './LeftSection';
-import SliderSection from './SliderSection';
+import { useState, useRef } from 'react';
+import LeftSection from '@/Components/Creation/LeftSection';
+import SliderSection from '@/Components/Creation/SliderSection';
 import { Swiper as SwiperClass } from 'swiper/types';
-import { useFetchFurniture } from '../../hooks/useFetchFurniture';
+import { useFetchFurniture } from '@/hooks/useFetchFurniture';
 
 const Creation: React.FC = () => {
   const swiperRef = useRef<SwiperClass | null>(null);

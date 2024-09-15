@@ -1,5 +1,4 @@
-import React from 'react';
-import { Product } from '../../types/api';
+import { Product } from '@/types/api';
 
 interface ProductItemProps {
   product: Product;
@@ -7,7 +6,7 @@ interface ProductItemProps {
 
 export const CreationItem: React.FC<ProductItemProps> = ({ product }) => {
   return (
-    <div className="text-center  text-[#70908b]">
+    <div className="text-center  text-accent">
       <img
         src={product.thumbnail}
         alt={product.title}

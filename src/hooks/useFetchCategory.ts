@@ -1,4 +1,3 @@
-// hooks/useFetchCategory.ts
 import { useQuery } from 'react-query';
 import axiosInstance from '../api/axios';
 import { CategoriesResponse } from '../types/api';

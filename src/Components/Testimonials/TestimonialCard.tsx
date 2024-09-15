@@ -13,7 +13,6 @@ const TestimonialCard: React.FC<TestimonialItemProps> = ({ testimonial }) => {
           className="min-h-64 min-w-56 rounded-md bg-center bg-cover flex items-center justify-center"
         ></div>
       </div>
-      {/* testimonial Text */}
       <div className="text-left md:basis-2/4 lg:px-12 basis-full">
         <img
           src="./images/testimonial/quote.svg"

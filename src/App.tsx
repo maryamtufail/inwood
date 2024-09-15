@@ -1,13 +1,13 @@
 
-import Layout from './Layout';
-import Banner from './Components/Banner/Banner';
-import ExploreSection from './Components/ExploreCategories/ExploreSection';
-import Benefits from './Components/Benefits/Benefits';
-import TestimonialSection from './Components/Testimonials/TestimonialSection';
-import Product from './Components/PopularProducts/Product';
-import News from './Components/News/News';
-import Creation from './Components/Creation/Creation';
-import SpecialPackage from './Components/SpecialPackage/SpecialPackage';
+import Layout from '@/Layout';
+import Banner from '@/Sections/Banner/Banner';
+import ExploreSection from '@/Sections/ExploreCategories/ExploreSection';
+import Benefits from '@/Sections/Benefits/Benefits';
+import TestimonialSection from '@/Sections/Testimonials/TestimonialSection';
+import Product from '@/Sections/PopularProducts/Product';
+import News from '@/Sections/News/News';
+import Creation from '@/Sections/Creation/Creation';
+import SpecialPackage from '@/Sections/SpecialPackage/SpecialPackage';
 
 
 function App() {

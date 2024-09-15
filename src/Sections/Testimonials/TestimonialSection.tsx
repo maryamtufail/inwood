@@ -1,4 +1,4 @@
-import TestimonialSlider from './TestimonialSlider';
+import TestimonialSlider from '@/Components/Testimonials/TestimonialSlider';
 
 const TestimonialSection: React.FC = () => {
   return (

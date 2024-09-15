@@ -5,7 +5,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Scrollbar } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/scrollbar';
-import {ArrowNarrowLeftIcon, ArrowRightIcon, ArrowNarrowRightIcon } from '@heroicons/react/solid';
+import {
+  ArrowNarrowLeftIcon,
+  ArrowRightIcon,
+  ArrowNarrowRightIcon,
+} from '@heroicons/react/solid';
 
 const TestimonialSlider: React.FC = () => {
   const { data, error, isLoading } = useFetchTestimonial();
@@ -30,24 +34,20 @@ const TestimonialSlider: React.FC = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-
-      {/* Custom Navigation Buttons */}
       <div className="absolute hidden inset-y-0 right-4 z-10 xl:flex flex-col items-center justify-center space-y-4">
         <button
           className="bg-blue-100 p-3 rounded-full text-blue-500"
           onClick={() => swiperRef.current?.slidePrev()}
         >
-         <ArrowNarrowLeftIcon className='w-6 h-6 inline-block'/>
+          <ArrowNarrowLeftIcon className="w-6 h-6 inline-block" />
         </button>
         <button
           className="bg-red-100 p-3 rounded-full text-red-500"
           onClick={() => swiperRef.current?.slideNext()}
         >
-           <ArrowNarrowRightIcon className='w-6 h-6 inline-block'/>
+          <ArrowNarrowRightIcon className="w-6 h-6 inline-block" />
         </button>
       </div>
-      {/* all reviews link */}
-
       <a
         href="#"
         className="flex items-center justify-center text-lg hover:underline mt-2"

@@ -8,7 +8,6 @@ interface ProductDisplayProps {
   rating: number;
   description: string;
   thumbnail: string;
- 
 }
 
 const ProductDisplay: React.FC<ProductDisplayProps> = ({
@@ -61,12 +60,12 @@ const ProductDisplay: React.FC<ProductDisplayProps> = ({
 
       <div className="flex flex-col xl:flex-col lg:flex-row gap-6 relative px-12">
         <div
-          className="w-full h-[510px] bg-[#07484a] rounded-lg mb-4 lg:mb-0 bg-cover bg-center relative"
+          className="w-full h-[510px] bg-secondary rounded-lg mb-4 lg:mb-0 bg-cover bg-center relative"
           style={{ backgroundImage: `url(${thumbnail})` }}
         >
           <button
             onClick={toggleFullScreen}
-            className="absolute right-2 bottom-2 p-2 bg-white bg-opacity-80 rounded-full xl:rounded-lg hover:bg-opacity-100 transition"
+            className="absolute right-2 bottom-2 p-2 bg-primary rounded-full xl:rounded-lg hover:bg-opacity-100 transition"
           >
             <ZoomInIcon className="w-6 h-6 text-white" />
           </button>
@@ -74,9 +73,9 @@ const ProductDisplay: React.FC<ProductDisplayProps> = ({
 
         <div className="">
           <div className="mb-5">
-            <div className="flex flex-row justify-between w-full">
+            <div className="flex flex-col xl:flex-row justify-between gap-6 w-full">
               <h2 className="text-2xl font-semibold text-gray-800">{title}</h2>
-              <button className="flex items-center gap-3 justify-center bg-[#70908b] text-white px-6 py-3 rounded-md hover:bg-transparent border hover:border-[#70908b] transition-all">
+              <button className="flex w-[340px] items-center gap-3 justify-center bg-[#70908b] text-white px-6 py-3 rounded-md hover:bg-transparent border hover:border-[#70908b] transition-all">
                 Add to Cart
                 <ShoppingCartIcon className="w-5 h-5" />
               </button>

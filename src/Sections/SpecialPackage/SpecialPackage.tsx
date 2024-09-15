@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import ProductDisplay from './ProductDisplay';
-import Description from './Description';
-import Slider from './Slider';
+import ProductDisplay from '@/Components/SpecialPackage/ProductDisplay';
+import Description from '@/Components/SpecialPackage/Description';
+import Slider from '@/Components/SpecialPackage/Slider';
 import { useFetchFurniture } from '@/hooks/useFetchFurniture';
 import { Product } from '@/types/api';
 

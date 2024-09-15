@@ -10,16 +10,16 @@ const LeftSection: React.FC<LeftSectionProps> = ({
   progressWidth,
 }) => {
   return (
-    <div className="w-1/2 md:w-1/3 px-12 text-white bg-[#70908b] rounded-r-lg space-y-4 py-24">
+    <div className="w-1/2 md:w-1/3 px-12 text-textSecondary bg-secondary rounded-r-lg space-y-4 py-24">
       <h1 className="text-3xl font-bold ">
         Our <br /> Own Creation
       </h1>
       <h2 className="text-md ">Designed in our studio</h2>
       <div className="flex flex-row justify-between items-center">
         <button className="py-2 mt-4 rounded-md">More</button>
-        <div className="w-full h-1 bg-[#07484a] mt-6 rounded-md mx-8">
+        <div className=" w-full h-1 bg-primary mt-6 rounded-md mx-8">
           <div
-            className="h-full bg-white rounded-md"
+            className="h-full bg-accent rounded-md"
             style={{ width: `${progressWidth}%` }}
           ></div>
         </div>

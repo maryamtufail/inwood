@@ -68,18 +68,18 @@ const Slider: React.FC<SliderProps> = ({ products, onProductSelect }) => {
             className={`flex ${product.id === products[activeIndex].id ? 'swiper-slide-active w-[680px]' : ' w-[620px]'}`}
           >
             <div
-              className="h-[149px] w-[248px] bg-gray-300 rounded-lg bg-cover bg-center"
+              className="h-[149px] w-[248px] bg-accent rounded-lg bg-cover bg-center"
               style={{ backgroundImage: `url(${product.thumbnail})` }}
             ></div>
             <div
-              className={`flex-grow flex items-center justify-between p-4 ml-2 ${product.id === products[activeIndex].id ? 'border rounded-l-lg bg-[#e0f6f1]' : ''}`}
+              className={`flex-grow flex items-center justify-between p-4 ml-2 ${product.id === products[activeIndex].id ? 'border rounded-lg bg-green-100' : ''}`}
             >
               <div className="flex flex-col w-full justify-center">
                 <div className="flex flex-col lg:flex-row w-full justify-between">
-                  <h4 className="text-md md:text-lg font-semibold text-gray-800">
+                  <h4 className="text-md md:text-lg font-semibold ">
                     {product.title}
                   </h4>
-                  <h3 className="text-md md:text-xl font-bold text-gray-800">
+                  <h3 className="text-md md:text-xl font-bold ">
                     ${product.price.toFixed(2)}
                   </h3>
                 </div>

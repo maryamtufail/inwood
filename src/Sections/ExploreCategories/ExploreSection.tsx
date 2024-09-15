@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import SearchBar from './SearchBar';
-import CategoryList from './CategoryList';
-import MobileCategoryDrawer from './MobileCategoryDrawer';
-import CategoryGrid from './CategoryGrid';
+import SearchBar from '@/Components/ExploreCategories/SearchBar';
+import CategoryList from '@/Components/ExploreCategories/CategoryList';
+import MobileCategoryDrawer from '@/Components/ExploreCategories/MobileCategoryDrawer';
+import CategoryGrid from '@/Components/ExploreCategories/CategoryGrid';
 import { ArrowRightIcon, MenuIcon } from '@heroicons/react/solid';
 
 const ExploreSection: React.FC = () => {

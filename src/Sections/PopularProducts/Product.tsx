@@ -1,4 +1,4 @@
-import ProductSlider from './ProductSlider';
+import ProductSlider from "@/Components/PopularProduct/ProductSlider";
 
 const Product: React.FC = () => {
   return (
