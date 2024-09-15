@@ -1,4 +1,4 @@
-import { useFetchCategory } from '../../hooks/useFetchCategory';
+import { useFetchCategory } from '@/hooks/useFetchCategory';
 import CategoryItem from './CategoryItem';
 
 interface CategoryListProps {
@@ -6,8 +6,11 @@ interface CategoryListProps {
   onSelectCategory: (category: string) => void;
 }
 
-const CategoryList: React.FC<CategoryListProps> = ({ selectedCategory, onSelectCategory }) => {
-  const { data: categories = [], isLoading, isError } = useFetchCategory(); 
+const CategoryList: React.FC<CategoryListProps> = ({
+  selectedCategory,
+  onSelectCategory,
+}) => {
+  const { data: categories = [], isLoading, isError } = useFetchCategory();
 
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Error loading categories</div>;

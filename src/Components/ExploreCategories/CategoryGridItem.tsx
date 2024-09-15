@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getColor } from '../../api/colorUtils'; // Utility function to fetch dominant color from image
+import { getColor } from '@/api/colorUtils';
 
 interface CategoryGridItemProps {
   title: string;
@@ -7,18 +7,21 @@ interface CategoryGridItemProps {
   active?: boolean;
 }
 
-const CategoryGridItem: React.FC<CategoryGridItemProps> = ({ title, image, active = false }) => {
-  const [overlayColor, setOverlayColor] = useState<string>('rgba(0, 0, 0, 0.5)'); // Default overlay color with low opacity
+const CategoryGridItem: React.FC<CategoryGridItemProps> = ({
+  title,
+  image,
+  active = false,
+}) => {
+  const [overlayColor, setOverlayColor] =
+    useState<string>('rgba(0, 0, 0, 0.5)');
 
-  // Fetch dominant color from image when component mounts or image changes
   useEffect(() => {
     const fetchOverlayColor = async () => {
       try {
         const color = await getColor(image);
-        setOverlayColor(`rgba(${color}, 0.5)`); // Apply low opacity to the fetched color
+        setOverlayColor(`rgba(${color}, 0.5)`);
       } catch (error) {
         console.error('Failed to fetch color:', error);
-        // Fallback to semi-transparent black
         setOverlayColor('rgba(0, 0, 0, 0.5)');
       }
     };
@@ -27,23 +30,22 @@ const CategoryGridItem: React.FC<CategoryGridItemProps> = ({ title, image, activ
   }, [image]);
 
   return (
-    <div className={`relative flex flex-col items-center justify-center min-h-[250px] rounded-xl ${!active ? 'shadow-lg' : ''}`}>
-      {/* Image */}
+    <div
+      className={`relative flex flex-col items-center justify-center min-h-[250px] rounded-xl ${!active ? 'shadow-lg' : ''}`}
+    >
       <img
         src={image}
         alt={title}
         className="w-full h-[250px] object-cover rounded-xl"
       />
 
-      {/* Color Overlay with Low Opacity */}
       <div
         className="absolute inset-0 rounded-xl"
         style={{
-          backgroundColor: overlayColor, // Dynamically set background color with transparency
+          backgroundColor: overlayColor,
         }}
       />
 
-      {/* Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
         <h3 className="text-3xl font-semibold text-white">{title}</h3>
         {active && (
