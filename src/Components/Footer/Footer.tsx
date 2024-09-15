@@ -1,7 +1,7 @@
 const Footer: React.FC = () => {
   return (
     <footer className="bg-[#F3F6F5] pt-20 pb-10 text-[#07484A]">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row px-10">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row px-10">
         <div className="flex flex-col items-start w-full md:w-1/3 mb-8 md:mb-0">
           <img src="/images/logo.png" alt="Logo" className="w-32  mb-4" />
           <div className="flex space-x-4 mb-4">
@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Second Section (Links) */}
-        <div className="w-full md:w-4/5 grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="w-full md:w-4/5 grid grid-cols-2 md:mt-12 md:grid-col-2 lg:grid-cols-4 gap-8">
           {/* My Account */}
           <div>
             <h4 className="text-lg font-semibold mb-5">My Account</h4>

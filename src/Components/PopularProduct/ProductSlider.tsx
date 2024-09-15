@@ -70,7 +70,7 @@ const ProductSlider: React.FC = () => {
         ))}
       </Swiper>
 
-      <div className="flex flex-row items-center justify-end p-3 space-x-4">
+      <div className="hidden xl:flex flex-row items-center justify-end p-3 space-x-4">
         <button
           className="bg-blue-100 p-3 rounded-full text-blue-500"
           onClick={prevSlide}

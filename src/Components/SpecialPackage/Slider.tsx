@@ -33,7 +33,7 @@ const Slider: React.FC<SliderProps> = ({ products, onProductSelect }) => {
   }, [activeIndex, products, onProductSelect]);
 
   return (
-    <div className="relative pl-12 mt-8 special">
+    <div className="relative xl:pl-12 mt-8 special">
       <Swiper
         ref={swiperRef}
         loop={true}
@@ -65,7 +65,7 @@ const Slider: React.FC<SliderProps> = ({ products, onProductSelect }) => {
         {products.map((product) => (
           <SwiperSlide
             key={product.id}
-            className={`flex ${product.id === products[activeIndex].id ? 'swiper-slide-active w-[680px]' : ' w-[620px]'}`}
+            className={`flex ${product.id === products[activeIndex].id ? 'swiper-slide-active w-[620px]' : ' w-[540px]'}`}
           >
             <div
               className="h-[149px] w-[248px] bg-accent rounded-lg bg-cover bg-center"

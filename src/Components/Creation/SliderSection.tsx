@@ -20,7 +20,7 @@ const SliderSection: React.FC<SliderSectionProps> = ({
   products,
 }) => {
   return (
-    <div className="w-1/2 md:w-2/3 mt-12 md:mt-0 h-[737px] pl-4 md:pl-2 flex items-center justify-center">
+    <div className="xl:w-3/4 md:w-1/2 mt-12 md:mt-0 h-[790px] xl:h-[737px] pl-4 md:pl-12 flex items-center justify-center">
       <Swiper
         spaceBetween={10}
         slidesPerView={3}
@@ -50,15 +50,15 @@ const SliderSection: React.FC<SliderSectionProps> = ({
         {products.map((product, index) => (
           <SwiperSlide key={product.id}>
             <div
-              className={`w-full  md:h-[537px] py-2 bg-accent rounded-md transform transition-transform duration-500 ease-in-out ${
-                index === activeIndex ? 'scale-95' : 'scale-90'
+              className={`w-full  md:h-[737px] lg:h-[537px] py-2 bg-accent rounded-md transform transition-transform duration-500 ease-in-out ${
+                index === activeIndex ? 'scale-100' : 'scale-95'
               }`}
               style={{ backgroundColor: getColor(index) }}
             >
               <CreationItem product={product} />
 
               <button className="absolute bottom-0 left-0 text-xl w-full font-semibold text-textSecondary py-4 px-6 bg-secondary hover:text-textPrimary hover:bg-transparent border-2 border-[#70908b]  rounded mr-6">
-                Explore All Bed
+                Explore All 
               </button>
             </div>
           </SwiperSlide>

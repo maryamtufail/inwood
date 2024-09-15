@@ -6,15 +6,12 @@ interface ProductItemProps {
 
 export const CreationItem: React.FC<ProductItemProps> = ({ product }) => {
   return (
-    <div className="text-center  text-accent">
+    <div className="text-center  text-[#70908b]">
       <img
         src={product.thumbnail}
         alt={product.title}
-        className="w-full h-[350px] object-cover mb-2"
+        className="w-full    h-[550px]  object-fit mb-2"
       />
-
-      <h2 className="text-2xl font-semibold">{product.title}</h2>
-      <p className="text-2xl font-semibold mb-16">${product.price}</p>
     </div>
   );
 };

@@ -2,7 +2,7 @@ import ProductSlider from "@/Components/PopularProduct/ProductSlider";
 
 const Product: React.FC = () => {
   return (
-    <section id="product" className="pt-24 pb-24 px-0 relative">
+    <section id="product" className="pt-24 text-center pb-24 px-0 relative">
       <img
         src="/images/product/container.svg"
         alt="Decorative SVG"

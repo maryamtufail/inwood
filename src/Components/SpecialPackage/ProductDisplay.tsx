@@ -58,9 +58,9 @@ const ProductDisplay: React.FC<ProductDisplayProps> = ({
         </div>
       )}
 
-      <div className="flex flex-col xl:flex-col lg:flex-row gap-6 relative px-12">
+      <div className="flex flex-col xl:flex-col lg:flex-row gap-6 relative px-4 xl:px-12">
         <div
-          className="w-full h-[510px] bg-secondary rounded-lg mb-4 lg:mb-0 bg-cover bg-center relative"
+          className="w-full h-[210px] xl:h-[510px] bg-secondary rounded-lg mb-4 lg:mb-0 bg-cover bg-center relative"
           style={{ backgroundImage: `url(${thumbnail})` }}
         >
           <button
@@ -75,7 +75,7 @@ const ProductDisplay: React.FC<ProductDisplayProps> = ({
           <div className="mb-5">
             <div className="flex flex-col xl:flex-row justify-between gap-6 w-full">
               <h2 className="text-2xl font-semibold text-gray-800">{title}</h2>
-              <button className="flex w-[340px] items-center gap-3 justify-center bg-[#70908b] text-white px-6 py-3 rounded-md hover:bg-transparent border hover:border-[#70908b] transition-all">
+              <button className="flex lg:w-[340px] items-center gap-3 justify-center bg-[#70908b] text-white px-6 py-3 rounded-md hover:bg-transparent border hover:border-[#70908b] transition-all">
                 Add to Cart
                 <ShoppingCartIcon className="w-5 h-5" />
               </button>

@@ -10,7 +10,7 @@ const LeftSection: React.FC<LeftSectionProps> = ({
   progressWidth,
 }) => {
   return (
-    <div className="w-1/2 md:w-1/3 px-12 text-textSecondary bg-secondary rounded-r-lg space-y-4 py-24">
+    <div className="xl:w-1/4 md:w-1/2 px-12 text-textSecondary bg-secondary rounded-r-lg space-y-4 py-24">
       <h1 className="text-3xl font-bold ">
         Our <br /> Own Creation
       </h1>

@@ -9,7 +9,7 @@ const CategoryItem: React.FC<CategoryItemProps> = ({ name, active = false, onCli
     <div
       className={`relative py-2 px-4 cursor-pointer transition-all duration-300 ${
         active
-          ? 'font-bold text-textPrimary border-l-4 border-primary'
+          ? 'font-bold text-textPrimary  border-primary'
           : 'text-accent hover:text-textSecondary'
       }`}
       onClick={onClick}
