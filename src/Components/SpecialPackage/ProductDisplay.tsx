@@ -60,14 +60,14 @@ const ProductDisplay: React.FC<ProductDisplayProps> = ({
 
       <div className="flex flex-col xl:flex-col lg:flex-row gap-6 relative px-12">
         <div
-          className="w-full h-[510px] bg-gray-300 rounded-lg mb-4 lg:mb-0 bg-cover bg-center relative"
+          className="w-full h-[510px] bg-[#07484a] rounded-lg mb-4 lg:mb-0 bg-cover bg-center relative"
           style={{ backgroundImage: `url(${thumbnail})` }}
         >
           <button
             onClick={toggleFullScreen}
             className="absolute right-2 bottom-2 p-2 bg-white bg-opacity-80 rounded-full xl:rounded-lg hover:bg-opacity-100 transition"
           >
-            <ZoomInIcon className="w-6 h-6 text-gray-700" />
+            <ZoomInIcon className="w-6 h-6 text-white" />
           </button>
         </div>
 
