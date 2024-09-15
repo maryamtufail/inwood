@@ -1,6 +1,4 @@
-import React from 'react';
-
-import { Testimonial } from '../../types/api';
+import { Testimonial } from '@/types/api';
 
 interface TestimonialItemProps {
   testimonial: Testimonial;

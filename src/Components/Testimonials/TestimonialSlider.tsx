@@ -1,14 +1,14 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import TestimonialCard from './TestimonialCard';
-import { useFetchTestimonial } from '../../hooks/useFetchTestimonial';
+import { useFetchTestimonial } from '@/hooks/useFetchTestimonial';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Scrollbar } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/scrollbar';
-import { ArrowRightIcon } from '@heroicons/react/solid';
+import {ArrowNarrowLeftIcon, ArrowRightIcon, ArrowNarrowRightIcon } from '@heroicons/react/solid';
 
 const TestimonialSlider: React.FC = () => {
-    const { data, error, isLoading } = useFetchTestimonial();
+  const { data, error, isLoading } = useFetchTestimonial();
   const swiperRef = useRef<any>(null);
 
   if (isLoading) return <div>Loading...</div>;
@@ -37,50 +37,23 @@ const TestimonialSlider: React.FC = () => {
           className="bg-blue-100 p-3 rounded-full text-blue-500"
           onClick={() => swiperRef.current?.slidePrev()}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"
-            />
-          </svg>
+         <ArrowNarrowLeftIcon className='w-6 h-6 inline-block'/>
         </button>
         <button
           className="bg-red-100 p-3 rounded-full text-red-500"
           onClick={() => swiperRef.current?.slideNext()}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
-            />
-          </svg>
+           <ArrowNarrowRightIcon className='w-6 h-6 inline-block'/>
         </button>
       </div>
-       {/* all reviews link */}
-   
-          <a
-            href="#"
-            className="flex items-center justify-center text-lg hover:underline mt-2"
-          >
-            See all reviews <ArrowRightIcon className="h-5 w-5 ml-2" />
-          </a>
-       
+      {/* all reviews link */}
+
+      <a
+        href="#"
+        className="flex items-center justify-center text-lg hover:underline mt-2"
+      >
+        See all reviews <ArrowRightIcon className="h-5 w-5 ml-2" />
+      </a>
     </div>
   );
 };

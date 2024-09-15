@@ -3,7 +3,7 @@ import { ArrowDownIcon, ArrowUpIcon } from '@heroicons/react/solid';
 import { Scrollbar } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import { Product } from '../../types/api';
+import { Product } from '@/types/api';
 
 interface SliderProps {
   products: Product[];

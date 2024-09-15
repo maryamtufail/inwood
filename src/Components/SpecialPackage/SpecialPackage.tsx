@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import ProductDisplay from './ProductDisplay';
 import Description from './Description';
 import Slider from './Slider';
-import { useFetchFurniture } from '../../hooks/useFetchFurniture';
-import { Product } from '../../types/api';
+import { useFetchFurniture } from '@/hooks/useFetchFurniture';
+import { Product } from '@/types/api';
 
 const products = [
   {

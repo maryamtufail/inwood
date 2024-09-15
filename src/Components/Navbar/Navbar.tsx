@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Disclosure } from '@headlessui/react';
 import { MenuIcon, SearchIcon } from '@heroicons/react/outline';
 import { ShoppingCartIcon, UserCircleIcon } from '@heroicons/react/solid';
-import { NavigationItem } from '../../types/navigation';
+import { NavigationItem } from '@/types/navigation';
 import Drawer from './Drawer';
 import Drawerdata from './Drawerdata';
 

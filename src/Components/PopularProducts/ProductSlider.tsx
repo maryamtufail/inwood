@@ -5,8 +5,8 @@ import 'swiper/css/scrollbar';
 import { Scrollbar } from 'swiper/modules';
 import ProductItem from './ProductItem';
 import { Swiper as SwiperType } from 'swiper/types';
-import { useFetchFurniture } from '../../hooks/useFetchFurniture';
-import { getColor } from '../../api/colorUtils';
+import { useFetchFurniture } from '@/hooks/useFetchFurniture';
+import { getColor } from '@/api/colorUtils';
 
 const ProductSlider: React.FC = () => {
   const swiperRef = useRef<SwiperType | null>(null);

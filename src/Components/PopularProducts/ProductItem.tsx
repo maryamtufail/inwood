@@ -7,7 +7,6 @@ interface ProductItemProps {
 const ProductItem: React.FC<ProductItemProps> = ({
   thumbnail,
   title,
-
   price,
 }) => {
   return (
