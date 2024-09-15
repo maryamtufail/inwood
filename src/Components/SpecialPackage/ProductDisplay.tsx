@@ -15,7 +15,7 @@ const ProductDisplay: React.FC<ProductDisplayProps> = ({
   price,
   rating,
   description,
-  thumbnail, // Include thumbnail prop
+  thumbnail,
 }) => {
   const [isLargeScreen, setIsLargeScreen] = useState<boolean>(true);
 
@@ -52,7 +52,7 @@ const ProductDisplay: React.FC<ProductDisplayProps> = ({
             </button>
           </div>
           <div className="text-yellow-500 flex my-2">
-            {Array(rating)
+            {Array(Math.round(rating))
               .fill('')
               .map((_, i) => (
                 <svg

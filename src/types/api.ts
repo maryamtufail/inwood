@@ -3,28 +3,15 @@ export interface Product {
   id: number;
   title: string;
   price: number;
-  brand: string;
+  brand?: string;
   thumbnail: string;
+  rating: number;
+  description: string;
 }
 
 export interface ProductsResponse {
   products: Product[];
 }
-
-export interface SpecialProduct {
-  id: number;
-  title: string;
-  price: number;
-  rating: number;
-  description: string;
-  thumbnail: string;
-}
-
-export interface SpecialProductsResponse {
-  products: SpecialProduct[];
-}
-
-
 
 export interface Testimonial {
 
