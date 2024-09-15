@@ -2,7 +2,6 @@ interface LeftSectionProps {
   navigatePrev: () => void;
   navigateNext: () => void;
   progressWidth: number;
-  
 }
 
 const LeftSection: React.FC<LeftSectionProps> = ({
@@ -18,14 +17,12 @@ const LeftSection: React.FC<LeftSectionProps> = ({
       <h2 className="text-md ">Designed in our studio</h2>
       <div className="flex flex-row justify-between items-center">
         <button className="py-2 mt-4 rounded-md">More</button>
-        {/* Progress bar */}
         <div className="w-full h-1 bg-[#07484a] mt-6 rounded-md mx-8">
           <div
             className="h-full bg-white rounded-md"
             style={{ width: `${progressWidth}%` }}
           ></div>
         </div>
-        {/* Navigation Buttons */}
         <div className="flex items-center space-x-2 mt-4">
           <button
             onClick={navigatePrev}

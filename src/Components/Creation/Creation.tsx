@@ -21,14 +21,13 @@ const Creation: React.FC = () => {
   };
 
   const progressWidth = (activeIndex / 4) * 100;
-  const { data, error, isLoading } = useFetchFurniture();
 
-  // Handle loading and error states
+  const { data, error, isLoading } = useFetchFurniture();
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <div className="flex flex-row items-center justify-between py-24">
+    <div className="flex flex-row items-center justify-between">
       <LeftSection
         navigatePrev={navigatePrev}
         navigateNext={navigateNext}
